@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #E5E5E5;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 32px;
+  box-shadow: 0px 2px 1px rgba(65, 81, 100, 0.15);
+  margin-bottom: 40px;
+}
+header .divh1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+header .divh1 h1 {
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  color: #363E48;
+}
+header .divh1 h1 i {
+  font-size: 22px;
+  margin-right: 8px;
+  color: #798AA4;
+}
+header .divlogo {
+  display: flex;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+main .main-content {
+  background-color: lightblue;
+  width: 78.6%;
+}
+main .main-content .fazenda {
+  background-color: #FFFFFF;
+  width: 248px;
+  height: auto;
+  border: 1px solid #DFE0E7;
+  border-radius: 8px;
+}
+main .main-content .fazenda hr {
+  border: 1px solid #E7E8EF;
+  margin: 16px 0;
+}
+main .main-content .fazenda label {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: bold;
+  color: #20252B;
+}
+main .main-content .fazenda p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #415164;
+}
+main .main-content .fazenda .p2 {
+  font-size: 14px;
+  line-height: 18.2px;
+  color: #798AA4;
+}
+main .main-content .fazenda .p3 {
+  font-size: 12px;
+  line-height: 12px;
+  color: #627389;
+}
+main .main-content .fazenda .f {
+  margin: 12px 0 0 16px;
+}
+main .main-content .fazenda .ddvsrpup {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .main-content .fazenda .ddvsrpup .ddv {
+  margin: -4px 32px 12px 16px;
+}
+main .main-content .fazenda .ddvsrpup .s {
+  margin: -4px 0 12px 0;
+}
+main .main-content .fazenda .ddvsrpup .rp {
+  margin: -4px 0 8px 16px;
+}
+main .main-content .fazenda .ddvsrpup .u {
+  width: 32px;
+  height: 32px;
+  background-color: #F5F6FA;
+  border: 1px solid #DFE0E7;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0 0 16px;
+}
+main .main-content .fazenda .ddvsrpup .u .p2 {
+  color: #798AA4;
+}
+main .main-content .fazenda .ddvsrpup .p {
+  margin: 0 0 0 16px;
+}
+main .main-content .fazenda .ddvsrpup .p i {
+  color: #1854C4;
+  margin-right: 2px;
+}
+main .main-content .fazenda .ddvsrpup .p p {
+  font-weight: bold;
+  color: #20252B;
+  margin-top: -1px;
+}
+main .main-content .fazenda .ddvsrpup .p .p3 {
+  color: #627389;
+  margin-top: 3px;
+}
+main .main-content .fazenda .os {
+  margin: -4px 16px 0;
+}
+main .main-content .fazenda .os .p2 {
+  color: #415164;
+}
+main .main-content .fazenda .b {
+  margin: 0 16px 16px;
+  display: flex;
+  justify-content: center;
+}
+main .main-content .fazenda .b button {
+  padding: 10px 16px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #C8CED8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #556476;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 2%;
+}
+main .main-content .fazenda .b button i {
+  font-size: 16px;
+  line-height: 12px;
+  color: #415164;
+  margin-right: 8px;
+}
+
+/*# sourceMappingURL=styles.css.map */
