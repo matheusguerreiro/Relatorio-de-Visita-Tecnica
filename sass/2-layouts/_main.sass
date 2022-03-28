@@ -1,19 +1,28 @@
 @use "../1-base/_variables"
+@use "../3-modules/_mixins-modules"
 
 main
   display: flex
   justify-content: center
+  // background-color: yellow
   .main-content
-    // background-color: #E5E5E5
-    background-color: lightblue
+    background-color: #E5E5E5
+    // background-color: lightblue
     width: 78.6%
-
+    // width: 1050px
+    display: flex
+    // justify-content: space-between
+    flex-direction: row
+    gap: 24px
+    
     .fazenda
       background-color: #FFFFFF
-      width: 248px
-      height: auto
+      min-width: 248px
+      max-width: 248px
+      height: fit-content
       border: 1px solid #DFE0E7
       border-radius: 8px
+      margin-top: 27.5px
       hr
         border: 1px solid #E7E8EF
         margin: 16px 0
@@ -95,7 +104,29 @@ main
             color: #415164
             margin-right: 8px
         
+    .anotacoes-eventos
+      // background-color: lightgreen
+      display: flex
+      flex-wrap: wrap
+      // width: 776px
+      width: fit-content
+      gap: 16px
 
+      h2
+        width: 100%
+        font-size: 20px
+        line-height: 20px
+        letter-spacing: -2%
+        color: #363E48
+        font-weight: 600
+        margin-bottom: -8px
 
+      .c1, .c2, .c3, .c4
+        @include mixins-modules.cs
+      .c1, .c3
+        margin: 0
+      .c2, .c4
+        margin: 0 16px 0 0
 
-    
+      .pc1, .pc2
+        @include mixins-modules.pcs

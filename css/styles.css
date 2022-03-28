@@ -51,15 +51,20 @@ main {
   justify-content: center;
 }
 main .main-content {
-  background-color: lightblue;
+  background-color: #E5E5E5;
   width: 78.6%;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 }
 main .main-content .fazenda {
   background-color: #FFFFFF;
-  width: 248px;
-  height: auto;
+  min-width: 248px;
+  max-width: 248px;
+  height: fit-content;
   border: 1px solid #DFE0E7;
   border-radius: 8px;
+  margin-top: 27.5px;
 }
 main .main-content .fazenda hr {
   border: 1px solid #E7E8EF;
@@ -160,6 +165,108 @@ main .main-content .fazenda .b button i {
   line-height: 12px;
   color: #415164;
   margin-right: 8px;
+}
+main .main-content .anotacoes-eventos {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 16px;
+}
+main .main-content .anotacoes-eventos h2 {
+  width: 100%;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -2%;
+  color: #363E48;
+  font-weight: 600;
+  margin-bottom: -8px;
+}
+main .main-content .anotacoes-eventos .c1, main .main-content .anotacoes-eventos .c2, main .main-content .anotacoes-eventos .c3, main .main-content .anotacoes-eventos .c4 {
+  width: 380px;
+  height: fit-content;
+  background-color: #FFF;
+  border: 1px solid #DFE0E7;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+main .main-content .anotacoes-eventos .c1 h3, main .main-content .anotacoes-eventos .c2 h3, main .main-content .anotacoes-eventos .c3 h3, main .main-content .anotacoes-eventos .c4 h3 {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+  color: #363E48;
+}
+main .main-content .anotacoes-eventos .c1 h3 i, main .main-content .anotacoes-eventos .c2 h3 i, main .main-content .anotacoes-eventos .c3 h3 i, main .main-content .anotacoes-eventos .c4 h3 i {
+  color: #798AA4;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 2px;
+}
+main .main-content .anotacoes-eventos .c1 p, main .main-content .anotacoes-eventos .c2 p, main .main-content .anotacoes-eventos .c3 p, main .main-content .anotacoes-eventos .c4 p {
+  font-size: 14px;
+  line-height: 18.2px;
+  color: #415164;
+}
+main .main-content .anotacoes-eventos .c1 .imagens, main .main-content .anotacoes-eventos .c2 .imagens, main .main-content .anotacoes-eventos .c3 .imagens, main .main-content .anotacoes-eventos .c4 .imagens {
+  display: flex;
+  gap: 16px;
+}
+main .main-content .anotacoes-eventos .c1 .imagens img, main .main-content .anotacoes-eventos .c2 .imagens img, main .main-content .anotacoes-eventos .c3 .imagens img, main .main-content .anotacoes-eventos .c4 .imagens img {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+}
+main .main-content .anotacoes-eventos .c1, main .main-content .anotacoes-eventos .c3 {
+  margin: 0;
+}
+main .main-content .anotacoes-eventos .c2, main .main-content .anotacoes-eventos .c4 {
+  margin: 0 16px 0 0;
+}
+main .main-content .anotacoes-eventos .pc1, main .main-content .anotacoes-eventos .pc2 {
+  width: 776px;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF;
+  border: 1px solid #DFE0E7;
+  border-radius: 8px;
+  position: relative;
+}
+main .main-content .anotacoes-eventos .pc1 .separador, main .main-content .anotacoes-eventos .pc2 .separador {
+  border: 1px solid #E7E8EF;
+  border: 3px solid black;
+  height: 90px;
+}
+main .main-content .anotacoes-eventos .pc1 .pi, main .main-content .anotacoes-eventos .pc2 .pi {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0.2;
+}
+main .main-content .anotacoes-eventos .pc1 .pd, main .main-content .anotacoes-eventos .pc2 .pd {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #E7E8EF;
+}
+main .main-content .anotacoes-eventos .pc1 .pd .dl, main .main-content .anotacoes-eventos .pc2 .pd .dl {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+main .main-content .anotacoes-eventos .pc1 .pd .dd, main .main-content .anotacoes-eventos .pc2 .pd .dd {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+main .main-content .anotacoes-eventos .pc1 .pb, main .main-content .anotacoes-eventos .pc2 .pb {
+  padding: 35px 20px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 900;
+  color: #798AA4;
+  border-left: 1px solid #E7E8EF;
 }
 
 /*# sourceMappingURL=styles.css.map */

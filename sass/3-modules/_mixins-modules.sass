@@ -1,0 +1,79 @@
+
+
+@mixin cs
+  width: 380px
+  height: fit-content
+  background-color: #FFF
+  border: 1px solid #DFE0E7
+  border-radius: 8px
+  padding: 16px
+  display: flex
+  flex-direction: column
+  gap:8px
+  h3
+    font-size: 16px
+    line-height: 16px
+    font-weight: bold
+    color: #363E48
+    i
+      color: #798AA4
+      font-size: 14px
+      line-height: 14px
+      margin-right: 2px
+  p
+    font-size: 14px
+    line-height: 18.2px
+    color: #415164
+  .imagens
+    display: flex
+    gap: 16px
+    img
+      width: 100px
+      height: 100px
+      border-radius: 4px
+
+@mixin pcs
+  width: 776px
+  height: fit-content
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: #FFF
+  border: 1px solid #DFE0E7
+  border-radius: 8px
+  position: relative
+
+  .separador
+    border: 1px solid #E7E8EF
+    border: 3px solid black
+    height: 90px
+
+  .pi
+    display: flex
+    flex-direction: column
+    flex-grow: 0.2
+
+  .pd
+    display: flex
+    // justify-content: space-between
+    align-items: center
+    border-left: 1px solid #E7E8EF
+    .dl
+      display: flex
+      flex-direction: column
+      text-align: left
+    .dd
+      display: flex
+      flex-direction: column
+      text-align: right
+
+  .pb
+    // background-color: lightcoral
+    padding: 35px 20px
+    font-size: 18px
+    line-height: 18px
+    font-weight: 900
+    color: #798AA4
+    border-left: 1px solid #E7E8EF
+
+  
