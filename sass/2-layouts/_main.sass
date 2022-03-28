@@ -23,6 +23,7 @@ main
       border: 1px solid #DFE0E7
       border-radius: 8px
       margin-top: 27.5px
+      // margin-right: 24px
       hr
         border: 1px solid #E7E8EF
         margin: 16px 0
@@ -108,8 +109,10 @@ main
       // background-color: lightgreen
       display: flex
       flex-wrap: wrap
-      // width: 776px
-      width: fit-content
+      // width: 792px
+      width: 776px
+      height: fit-content
+      // width: fit-content
       gap: 16px
 
       h2
@@ -124,9 +127,10 @@ main
       .c1, .c2, .c3, .c4
         @include mixins-modules.cs
       .c1, .c3
-        margin: 0
+        margin: 0 0 0 0
       .c2, .c4
-        margin: 0 16px 0 0
+        margin: 0 0 0 0
 
       .pc1, .pc2
         @include mixins-modules.pcs
+        // margin-right: 16px
