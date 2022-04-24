@@ -31,7 +31,7 @@ header {
 }
 header .divh1 {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
 }
 header .divh1 h1 {
@@ -39,6 +39,7 @@ header .divh1 h1 {
   line-height: 100%;
   letter-spacing: -0.01em;
   color: #363E48;
+  margin-right: 32px;
 }
 @media (max-width: 767px) {
   header .divh1 h1 {
@@ -46,7 +47,7 @@ header .divh1 h1 {
     line-height: 16px;
   }
 }
-header .divh1 h1 i {
+header .divh1 span i {
   font-size: 22px;
   margin-right: 8px;
   color: #798AA4;
@@ -144,7 +145,7 @@ main .main-content .fazenda .ddvsrpup .rpup {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: -4px 0 0 16px;
+  margin: -4px 16px 0 16px;
   column-gap: 16px;
   row-gap: 8px;
   align-items: center;
@@ -396,6 +397,22 @@ main .main-content .anotacoes-eventos .pc1 .pd .pb, main .main-content .anotacoe
   font-weight: 900;
   color: #798AA4;
   border-left: 1px solid #E7E8EF;
+}
+
+footer {
+  width: 100%;
+  background-color: #E7E8EF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+footer .divf {
+  font-size: 12px;
+  line-height: 12px;
+  color: #798AA4;
+  margin: 10px 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

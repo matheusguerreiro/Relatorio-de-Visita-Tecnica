@@ -10,16 +10,19 @@ header
   margin-bottom: 40px
   .divh1
     display: flex
-    flex-wrap: wrap
+    flex-direction: row
+    // flex-wrap: wrap
     align-items: center
     h1
       font-size: 24px
       line-height: 100%
       letter-spacing: -0.01em
       color: variables.$header-h1
+      margin-right: 32px
       @include responsive.mobile
         font-size: 16px
         line-height: 16px
+    span
       i
         font-size: 22px
         margin-right: 8px
