@@ -1,26 +1,49 @@
 @use "../1-base/_variables"
 @use "../3-modules/_mixins-modules"
+@use "../1-base/_responsive"
 
 main
   display: flex
   justify-content: center
+  background-color: #F5F6FA
   .main-content
-    background-color: #E5E5E5
-    width: 78.6%
-    // width: 1050px
+    background-color: #F5F6FA
+    // background-color: lightblue
+    // width: 78.6%
+    width: 1050px
+    margin: 0 32px
     display: flex
+    // justify-content: center
     flex-direction: row
     gap: 24px
+
+    @include responsive.tablet
+      width: 704px
+
+    @include responsive.mobile
+      flex-direction: column
+      width: 100%
+      margin: 0 16px
+      // padding: 0 16px
+
     
     .fazenda
       background-color: #FFFFFF
-      min-width: 248px
-      max-width: 248px
+      // min-width: 248px
+      // max-width: 248px
+      width: 248px
       height: fit-content
       border: 1px solid #DFE0E7
       border-radius: 8px
       margin-top: 27.5px
       // margin-right: 24px
+      // margin-left: 32px
+
+      @include responsive.mobile
+        width: 100%
+        margin-top: 0
+        margin-bottom: -8px
+
       hr
         border: 1px solid #E7E8EF
         margin: 16px 0
@@ -47,36 +70,54 @@ main
         display: flex
         flex-wrap: wrap
         // align-items: center
-        .ddv
-          margin: -4px 32px 12px 16px
-        .s
-          margin: -4px 0 12px 0
-        .rp
-          margin: -4px 0 8px 16px
-        .u
-          width: 32px
-          height: 32px
-          background-color: #F5F6FA
-          border: 1px solid #DFE0E7
-          border-radius: 16px
+        .ddvs
           display: flex
-          justify-content: center
+          flex-direction: row
+          column-gap: 32px
+          margin: -4px 0 12px 16px
+          @include responsive.mobile
+            width: 100%
+            flex-wrap: wrap
+          .ddv
+            // margin: -4px 32px 12px 16px
+          .s
+            // margin: -4px 0 12px 0
+        .rpup
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          margin: -4px 0 0 16px
+          column-gap: 16px
+          row-gap: 8px
           align-items: center
-          margin: 4px 0 0 16px
-          .p2
-            color: #798AA4
-        .p
-          margin: 0 0 0 16px
-          i
-            color: #1854C4
-            margin-right: 2px
-          p
-            font-weight: bold
-            color: #20252B
-            margin-top: -1px
-          .p3
-            color: #627389
-            margin-top: 3px
+          
+          .rp
+            // margin: -4px 0 8px 16px
+          .u
+            width: 32px
+            height: 32px
+            background-color: #F5F6FA
+            border: 1px solid #DFE0E7
+            border-radius: 16px
+            display: flex
+            justify-content: center
+            align-items: center
+            @include responsive.mobile
+              margin-right: 16px
+            .p2
+              color: #798AA4
+          .p
+            // margin: 0 0 0 16px
+            i
+              color: #1854C4
+              margin-right: 2px
+            p
+              font-weight: bold
+              color: #20252B
+              margin-top: -1px
+            .p3
+              color: #627389
+              margin-top: 3px
       .os
         margin: -4px 16px 0
         .p2
@@ -96,6 +137,7 @@ main
           font-size: 12px
           line-height: 12px
           letter-spacing: 2%
+          font-weight: bold
           i
             font-size: 16px
             line-height: 12px
@@ -105,10 +147,12 @@ main
     .anotacoes-eventos
       display: flex
       flex-wrap: wrap
-      width: 776px
+      // width: 776px
+      flex: 1
       height: fit-content
       // width: fit-content
       gap: 16px
+      // margin-right: 32px
 
       h2
         width: 100%
@@ -118,6 +162,10 @@ main
         color: #363E48
         font-weight: 600
         margin-bottom: -8px
+
+        @include responsive.mobile
+          // margin-top: -8px
+          margin-left: 6px
 
       .c1, .c2, .c3, .c4
         @include mixins-modules.cs

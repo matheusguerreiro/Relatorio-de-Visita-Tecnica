@@ -1,0 +1,20 @@
+$mobile: 767px
+$tablet: 1111px
+$w833: 833px
+$w785: 785px
+
+@mixin mobile
+  @media (max-width: $mobile)
+    @content
+
+@mixin tablet
+  @media (max-width: $tablet)
+    @content
+
+@mixin w833
+  @media (max-width: $w833)
+    @content
+
+@mixin w785
+  @media (max-width: $w785)
+    @content

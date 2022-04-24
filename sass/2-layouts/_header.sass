@@ -1,4 +1,5 @@
 @use "../1-base/_variables"
+@use "../1-base/_responsive"
 
 header
   background-color: #FFF
@@ -16,6 +17,9 @@ header
       line-height: 100%
       letter-spacing: -0.01em
       color: variables.$header-h1
+      @include responsive.mobile
+        font-size: 16px
+        line-height: 16px
       i
         font-size: 22px
         margin-right: 8px
