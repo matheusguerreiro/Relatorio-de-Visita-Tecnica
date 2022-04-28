@@ -29,32 +29,32 @@
       <aside class="fazenda">
         <div class="f">
           <label for="f">Fazenda</label>
-          <p>SOPRO DO MINUANO II</p>
-          <p class="p2">3 talhões</p>
+          <p id="nomeFazenda">SOPRO DO MINUANO II</p>
+          <p id="quantidadeTalhoes" class="p2">?</p> <!-- 3 talhões -->
         </div>
         <hr>
         <div class="ddvsrpup">
           <div class="ddvs">
             <div class="ddv">
               <label for="ddv">Data da visita</label>
-              <p>23/07/2020</p>
+              <p id="dataVisita">23/07/2020</p>
             </div>
             <div class="s">
               <label for="s">Safra</label>
-              <p>2020/21</p>
+              <p id="safra">2020/21</p>
             </div>
           </div>
           <div class="rpup">
             <div class="rp">
               <label for="rp">Realizada por</label>
-              <p>Joel Hilleshein</p>
+              <p id="usuario">Joel Hilleshein</p>
             </div>
             <div class="u">
-              <p class="p2">JH</p>
+              <p class="p2" id="iniciais">JH</p>
             </div>
             <div class="p">
               <label for="p">Pluviometria</label>
-              <p><i class="fa-solid fa-droplet"></i>118 mm</p>
+              <p id="pluviometria"><i class="fa-solid fa-droplet"></i></p> <!-- 118 mm -->
               <p class="p3">Acumulado na safra</p>
             </div>
           </div>
@@ -62,16 +62,16 @@
         <hr>
         <div class="os">
           <label for="os">Observações</label>
-          <p class="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lit, sed do eiusmod tem ut.</p>
+          <p class="p2" id="observacoes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua lit, sed do eiusmod tem ut.</p>
         </div>
         <hr>
         <div class="b">
           <button><i class="fa-solid fa-print"></i>IMPRIMIR</button>
         </div>
       </aside>
-      <article class="anotacoes-eventos">
-        <h2>Anotações da fazenda</h2>
-        <section class="c1">
+      <article class="anotacoes-eventos" id="article">
+        <h2 id="a1h2">Anotações da fazenda</h2>
+        <!-- <section class="c1">
           <h3><i class="fa-solid fa-pencil"></i>Anotações</h3>
           <div class="imagens">
             <img src="img/image-1.png" alt="">
@@ -87,9 +87,9 @@
             <img src="img/image-4.png" alt="">
           </div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-        </section>
-        <h2>Eventos dos talhões</h2>
-        <section class="pc1">
+        </section> -->
+        <h2 id="a2h2">Eventos dos talhões</h2>
+        <!-- <section class="pc1">
           <div class="pi">
             <h3>T 01-GL 171<span class="c">1º ciclo</span></h3>
             <p>GL 171 IPRO - 222,13 Ha</p>
@@ -98,9 +98,9 @@
           <div class="pd">
             <div class="dldd">
               <div class="dl">
-                <label for="ddp">Data do Plantio</label>
-                <label for="e">Emergência</label>
-                <label for="c">Colheita</label>
+                <label for="ddp" id="ddp">Data do Plantio</label>
+                <label for="e" id="e">Emergência</label>
+                <label for="c" id="c">Colheita</label>
               </div>
               <div class="dd">
                 <p>17/01/2020</p>
@@ -108,9 +108,8 @@
                 <p>07/05/2020</p>
               </div>
             </div>
-            <div class="pb"><i class="fa-solid fa-angle-up"></i></div>
+            <div class="pb"><i class="fa-solid fa-angle-up" onclick="mostrar()"></i></div>
           </div>
-          <!-- <div class="pb"><i class="fa-solid fa-angle-up"></i></div> -->
         </section>
         <section class="c3">
           <h3><i class="fa-solid fa-pencil"></i>Anotações</h3>
@@ -145,13 +144,39 @@
             </div>
             <div class="pb"><i class="fa-solid fa-angle-down"></i></div>
           </div>
-          <!-- <div class="pb"><i class="fa-solid fa-angle-down"></i></div> -->
-        </section>
+        </section> -->
       </article>
     </div>
   </main>
   <footer>
     <div class="divf">© 2022 CheckPlant Sistemas SA</div>
   </footer>
+  <script src="js/aside.js" type="module"></script>
+  <script src="js/anotacoesFazenda.js" type="module"></script>
+  <script src="js/eventosTalhoes.js" type="module"></script>
+  <script>
+    function mostrar(id) {
+      let idN = `n${id}`
+      let idI = `i${id}`
+      const sectionsN = document.getElementsByClassName('c3')
+      let icon = document.querySelectorAll('.pb i')
+      for (let i = 0; i < icon.length; i++) {
+        if (icon[i].id === idI && icon[i].className === 'fa-solid fa-angle-up') {
+          icon[i].className = 'fa-solid fa-angle-down'
+        } else if (icon[i].id === idI && icon[i].className === 'fa-solid fa-angle-down') {
+          icon[i].className = 'fa-solid fa-angle-up'
+        }
+      }
+      for (let i = 0; i < sectionsN.length; i++) {
+        if (sectionsN[i].id === idN) {
+          if (sectionsN[i].style.display === 'none') {
+            sectionsN[i].style.display = 'flex'
+          } else {
+            sectionsN[i].style.display = 'none'
+          }
+        }
+      }
+    }
+  </script>
 </body>
 </html>
