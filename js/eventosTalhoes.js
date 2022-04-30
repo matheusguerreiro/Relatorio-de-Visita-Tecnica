@@ -1,73 +1,18 @@
-import cors from "./cors.js"
-import token from "./token.js"
+import { dataNotes, dataPlantations } from "./gets.js"
 
-const a2h2 = document.getElementById('a2h2')
-const botaoM = document.getElementById('botaoM')
+const h2_eT = document.getElementById('a2h2')
+const a_ = document.getElementById('article')
 
-async function obterNotes() {
-  let url = `https://justcors.com/${cors()}/https://farmbox.cc/api/public/technical_visit_report/notes.json?token=${token()}`
-
-  try {
-    const resposta = await fetch(url)
-    if (!resposta.ok) {
-      throw Error('Erro if try!')
-    }
-    const respostaJson = await resposta.json()
-    return respostaJson
-  } catch (error) {
-    throw Error(`Erro catch! ${error}`)
-  }
-
-}
-// console.log(obterNotes())
-
-const dadosFazenda = obterNotes()
-.then((dados) => {
-  if (dados.error) {
-    throw Error('Erro if!')
-  }
-  // renderizarFazenda(dados)
-})
-.catch((error) => {
-  console.log(error)
-})
-
-async function obterTalhoes() {
-  let url = `https://justcors.com/${cors()}/https://farmbox.cc/api/public/technical_visit_report/plantations.json?token=${token()}`
-
-  try {
-    const resposta = await fetch(url)
-    if (!resposta.ok) {
-      throw Error('Erro if try!')
-    }
-    const respostaJson = await resposta.json()
-    return respostaJson
-  } catch (error) {
-    throw Error(`Erro catch! ${error}`)
-  }
-
-}
-// console.log(obterTalhoes())
-
-const dadosTalhoes = obterTalhoes()
-.then((dados) => {
-  if (dados.error) {
-    throw Error('Erro if!')
-  }
-  renderizarTalhoes(dados)
-})
-.catch((error) => {
-  console.log(error)
-})
-
-
-async function renderizarTalhoes(dados) {
-  const results = dados.results
-  const ns = await obterNotes()
+export function renderPlantations() {
+  const results = dataPlantations.results
   // console.log(results)
-  const notes = ns.results
+  const notes = dataNotes.results
   // console.log(notes)
   if (results.length !== 0) {
+    const h2 = document.createElement('h2')
+    h2.id = 'a2h2'
+    h2.innerText = 'Eventos dos talhões'
+    article.appendChild(h2)
     for (let i = 0; i < results.length; i++) {
       let idTalhao = results[i].id
       let indexTalhao = i
@@ -75,8 +20,8 @@ async function renderizarTalhoes(dados) {
       const talhao = `<section class="pc1" id="p${idTalhao}">
         <div class="pi">
           <h3>${results[i].name}<span class="c">${results[i].cycle}º ciclo</span></h3>
-          <p>GL 171 IPRO - 222,13 Ha</p>
-          <div class="s">${results[i].state}</div>
+          <p>${results[i].variety.name} - ${results[i].area} Ha</p>
+          <div class="s">${results[i].state === 'active' ? 'Plantado' : '...'}</div>
         </div>
         <div class="pd">
           <div class="dldd">
@@ -98,11 +43,11 @@ async function renderizarTalhoes(dados) {
       for (let i = 0; i < notes.length; i++) {
         if (notes[i].location_type === 'Plantation' && notes[i].location.id === idTalhao) {
           const notaTalhao = `<section class="c3" id="n${idTalhao}" ${indexTalhao === 0 ? `style="display:none"` : ``}>
-            <h3><i class="fa-solid fa-pencil"></i>Anotações</h3>
+            <h3><i class="fa-solid fa-pencil"></i>Anotações<span>${notes[i].date.slice(11, 16)}</span></h3>
             <div class="imagens">
               ${notes[i].attachments.images.length !== 0 ? `${notes[i].attachments.images.map((e) => {
-                return `<img src="${e.thumb_url}" alt="">`
-              })}` : ``}
+                return `<img src="${e.thumb_url}">`
+              }).join('')}` : ''}
             </div>
             <p>${notes[i].description}</p>
           </section>`
@@ -111,5 +56,10 @@ async function renderizarTalhoes(dados) {
         }
       }
     }
+  } else {
+    const h2 = document.createElement('h2')
+    h2.id = 'a2h2'
+    h2.innerText = 'Talhões sem eventos'
+    article.appendChild(h2)
   }
 }

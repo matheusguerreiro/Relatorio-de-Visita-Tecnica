@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" id="html">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +14,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="body">
   <header>
     <div class="divh1">
       <span><i class="fa-solid fa-file-lines"></i></span>
-      <h1>Relatório de visita técnica</h1>
+      <h1 id="titulo">Carregando...</h1>
     </div>
     <div class="divlogo">
       <img src="img/logo-fb.png" alt="Checkplant">
@@ -26,11 +26,12 @@
   </header>
   <main>
     <div class="main-content">
-      <aside class="fazenda">
+      <div id="carregando" class="carregando"><img src="img/loading-buffering.gif" alt=""></div>
+      <!-- <aside class="fazenda">
         <div class="f">
           <label for="f">Fazenda</label>
           <p id="nomeFazenda">SOPRO DO MINUANO II</p>
-          <p id="quantidadeTalhoes" class="p2">?</p> <!-- 3 talhões -->
+          <p id="quantidadeTalhoes" class="p2">3 talhões</p>
         </div>
         <hr>
         <div class="ddvsrpup">
@@ -54,7 +55,7 @@
             </div>
             <div class="p">
               <label for="p">Pluviometria</label>
-              <p id="pluviometria"><i class="fa-solid fa-droplet"></i></p> <!-- 118 mm -->
+              <p id="pluviometria"><i class="fa-solid fa-droplet"></i>118 mm</p>
               <p class="p3">Acumulado na safra</p>
             </div>
           </div>
@@ -68,11 +69,11 @@
         <div class="b">
           <button><i class="fa-solid fa-print"></i>IMPRIMIR</button>
         </div>
-      </aside>
-      <article class="anotacoes-eventos" id="article">
+      </aside> -->
+      <!-- <article class="anotacoes-eventos" id="article">
         <h2 id="a1h2">Anotações da fazenda</h2>
-        <!-- <section class="c1">
-          <h3><i class="fa-solid fa-pencil"></i>Anotações</h3>
+        <section class="c1">
+          <h3><i class="fa-solid fa-pencil"></i>Anotações<span>19:35</span></h3>
           <div class="imagens">
             <img src="img/image-1.png" alt="">
             <img src="img/image-2.png" alt="">
@@ -87,9 +88,9 @@
             <img src="img/image-4.png" alt="">
           </div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-        </section> -->
+        </section>
         <h2 id="a2h2">Eventos dos talhões</h2>
-        <!-- <section class="pc1">
+        <section class="pc1">
           <div class="pi">
             <h3>T 01-GL 171<span class="c">1º ciclo</span></h3>
             <p>GL 171 IPRO - 222,13 Ha</p>
@@ -144,17 +145,24 @@
             </div>
             <div class="pb"><i class="fa-solid fa-angle-down"></i></div>
           </div>
-        </section> -->
-      </article>
+        </section>
+      </article> -->
     </div>
   </main>
   <footer>
     <div class="divf">© 2022 CheckPlant Sistemas SA</div>
   </footer>
-  <script src="js/aside.js" type="module"></script>
-  <script src="js/anotacoesFazenda.js" type="module"></script>
-  <script src="js/eventosTalhoes.js" type="module"></script>
+  <script src="js/index.js" type="module"></script>
   <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        carregando.style.display = 'none'
+        body.style.overflow = "visible"
+        html.style.overflow = 'visible'
+        document.documentElement.scrollTop = 0
+      }, 2000)
+    })
+    
     function mostrar(id) {
       let idN = `n${id}`
       let idI = `i${id}`

@@ -2,10 +2,26 @@
 @use "../3-modules/_mixins-modules"
 @use "../1-base/_responsive"
 
+
 main
   display: flex
   justify-content: center
   background-color: #F5F6FA
+
+  .carregando
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 75px
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+    width: 100%
+    height: 100%
+    background-color: #F5F6FA
+
   .main-content
     background-color: #F5F6FA
     // background-color: lightblue
@@ -16,6 +32,7 @@ main
     // justify-content: center
     flex-direction: row
     gap: 24px
+
 
     @include responsive.tablet
       width: 704px

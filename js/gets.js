@@ -1,4 +1,4 @@
-import { farm, farm2, plantations } from "./urls.js"
+import { farm, farm2, notes, plantations } from "./urls.js"
 
 async function getFarm() {
   let url = farm
@@ -72,6 +72,26 @@ export const dataPlantations = await getPlantations()
     console.log(error)
   })  
 
-
-
-
+async function getNotes() {
+  let url = notes
+  try {
+    let response = await fetch(url)
+    if (!response.ok) {
+      throw Error('Erro no try getNotes() !')
+    }
+    let rJson = await response.json()
+    return rJson
+  } catch (error) {
+    console.log(error)
+  }
+}
+export const dataNotes = await getNotes()
+  .then((data) => {
+    if (data.error) {
+      throw Error('Erro no .then getNotes() !')
+    }
+    return data
+  })
+  .catch((error) => {
+    console.log(error)
+  })
