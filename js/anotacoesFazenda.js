@@ -16,7 +16,6 @@ export function renderFarmNotes() {
     for (let i = 0; i < results.length; i++) {
       let iFor = i
       if (results[i].location_type === 'Farm') {
-        // console.log(iFor)
         const section = document.createElement('section')
           section.classList.add('c1')
             const h3 = document.createElement('h3')
@@ -29,12 +28,10 @@ export function renderFarmNotes() {
               h3.appendChild(span)
           section.appendChild(h3)
         if (results[iFor].attachments.images.length !== 0) {
-          // console.log('TEM IMG', iFor)
           let images = results[iFor].attachments.images
           const div = document.createElement('div')
             div.classList.add('imagens')
           for (let i = 0; i < images.length; i++) {
-            // console.log('IMG AQUI')
             const img = document.createElement('img')
             img.src = images[i].thumb_url
             div.appendChild(img)

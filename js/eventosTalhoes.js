@@ -1,13 +1,8 @@
 import { dataNotes, dataPlantations } from "./gets.js"
 
-// const h2_eT = document.getElementById('a2h2')
-// const a_ = document.getElementById('article')
-
 export function renderPlantations() {
   const results = dataPlantations.results
-  // console.log(results)
   const notes = dataNotes.results
-  // console.log(notes)
   if (results.length !== 0) {
     const h2 = document.createElement('h2')
     h2.id = 'a2h2'
@@ -16,7 +11,6 @@ export function renderPlantations() {
     for (let i = 0; i < results.length; i++) {
       let idTalhao = results[i].id
       let indexTalhao = i
-      // console.log(idTalhao)
       const talhao = `<section class="pc1" id="p${idTalhao}">
         <div class="pi">
           <h3>${results[i].name}<span class="c">${results[i].cycle}º ciclo</span></h3>
