@@ -1,7 +1,7 @@
 import { dataNotes, dataPlantations } from "./gets.js"
 
-const h2_eT = document.getElementById('a2h2')
-const a_ = document.getElementById('article')
+// const h2_eT = document.getElementById('a2h2')
+// const a_ = document.getElementById('article')
 
 export function renderPlantations() {
   const results = dataPlantations.results
