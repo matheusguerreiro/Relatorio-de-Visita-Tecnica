@@ -1,6 +1,8 @@
 import { farm, farm2, notes, plantations } from "./urls.js"
 
-async function getFarm() {
+//  USAR async await ASSIM - sem o export dataFarm e sem usar o .then
+// DEPOIS É SÓ CHAMAR, NESSE CASO NO aside.js linha 3 e correr pro abraço!
+export async function getFarm() {
   let url = farm
   try {
     let response = await fetch(url)
@@ -13,17 +15,18 @@ async function getFarm() {
     console.log(error)
   }
 }
-export const dataFarm = await getFarm()
-  .then((data) => {
-    if (data.error) {
-      throw Error('Erro no .then getFarm() !')
-    }
-    return data
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+// export const dataFarm = await getFarm()
+//   .then((data) => {
+//     if (data.error) {
+//       throw Error('Erro no .then getFarm() !')
+//     }
+//     return data
+//   })
+//   .catch((error) => {
+//     console.log(error)
+//   })
 
+// E NÃO USAR ASSIM COM .then
 async function getFarm2() {
   let url = farm2
   try {

@@ -1,4 +1,6 @@
-import { dataFarm, dataFarm2, dataPlantations } from "./gets.js"
+import { dataFarm2, dataPlantations, getFarm } from "./gets.js"
+
+const dataFarm = await getFarm()
 
 let dFdataVisita = dataFarm.details.date.split('-').reverse().join('/')
 const mainContent = document.querySelector('.main-content')

@@ -4,7 +4,7 @@ const mainContent = document.querySelector('.main-content')
 
 export function renderFarmNotes() {
   const results = dataNotes.results
-  if (results.lenght !== 0) {
+  if (results.length !== 0) {
     const article = document.createElement('article')
     article.classList.add('anotacoes-eventos')
     article.id = 'article'
