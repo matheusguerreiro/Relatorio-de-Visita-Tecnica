@@ -1,9 +1,9 @@
 import { dataFarm, dataFarm2, dataPlantations } from "./gets.js"
 
-let dFdd = dataFarm.details.date.split('-').reverse().join('/')
+let dFdataVisita = dataFarm.details.date.split('-').reverse().join('/')
 const mainContent = document.querySelector('.main-content')
 
-document.getElementById('titulo').innerText = `Relatório de visita técnica - ${dFdd}`
+document.getElementById('titulo').innerText = `Relatório de visita técnica - ${dFdataVisita}`
 
 export function renderAside() {
   const aside = `<aside class="fazenda">
@@ -17,7 +17,7 @@ export function renderAside() {
       <div class="ddvs">
         <div class="ddv">
           <label for="ddv">Data da visita</label>
-          <p id="dataVisita">${dFdd}</p>
+          <p id="dataVisita">${dFdataVisita}</p>
         </div>
         <div class="s">
           <label for="s">Safra</label>
